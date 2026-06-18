@@ -106,3 +106,18 @@ body{
     0 -2px 10px rgba(0,0,0,.1);
 }
 
+.drawer{
+    position:fixed;
+    left:-280px;
+
+    width:280px;
+    height:100%;
+
+    background:white;
+
+    transition:.4s;
+}
+
+.drawer.active{
+    left:0;
+}
