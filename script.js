@@ -1,26 +1,19 @@
-const users = [
-
-{
-username:"admin",
+const users = {
+admin:{
 password:"admin123",
 role:"Administrator"
 },
 
-{
-username:"jose",
+jose:{
 password:"jose123",
 role:"Manager"
 },
 
-{
-username:"guest",
+guest:{
 password:"guest123",
-role:"Customer"
+role:"Guest"
 }
-
-];
-
-// LOGIN
+};
 
 function login(){
 
@@ -30,84 +23,84 @@ document.getElementById("username").value;
 let password =
 document.getElementById("password").value;
 
-let user =
-users.find(u =>
-u.username===username &&
-u.password===password
-);
+if(
+users[username] &&
+users[username].password === password
+){
 
-if(user){
+document.getElementById(
+"loginPage"
+).style.display="none";
 
-document.getElementById("loginPage")
-.style.display="none";
+document.getElementById(
+"app"
+).style.display="block";
 
-document.getElementById("app")
-.style.display="block";
+document.getElementById(
+"userName"
+).innerText=username;
 
-document.getElementById("userName")
-.innerHTML=user.username;
+document.getElementById(
+"userRole"
+).innerText=
+users[username].role;
 
-document.getElementById("userRole")
-.innerHTML=user.role;
+document.getElementById(
+"profileImg"
+).src=
+`https://api.dicebear.com/7.x/shapes/svg?seed=${username}`;
 
 }else{
-
-alert("Login Gagal!");
-
+alert("Username atau Password salah");
 }
 
 }
-
-// LOGOUT
 
 function logout(){
 
-document.getElementById("app")
-.style.display="none";
+document.getElementById(
+"app"
+).style.display="none";
 
-document.getElementById("loginPage")
-.style.display="flex";
-
+document.getElementById(
+"loginPage"
+).style.display="flex";
 }
-
-// DRAWER
 
 function toggleDrawer(){
 
-document.getElementById("drawer")
+document
+.getElementById("drawer")
 .classList.toggle("active");
 
 }
 
-// PINDAH PAGE
+function showPage(page){
 
-function showPage(id){
+document
+.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
 
-document.querySelectorAll(".page")
-.forEach(page=>{
-
-page.style.display="none";
-
-});
-
-document.getElementById(id)
-.style.display="block";
-
-document.getElementById("drawer")
-.classList.remove("active");
+document
+.getElementById(page)
+.classList.add("active");
 
 }
 
-// SEARCH
+function refreshPage(){
+location.reload();
+}
 
 function searchMenu(){
 
 let input =
-document.getElementById("searchMenu")
+document
+.getElementById("searchMenu")
 .value.toLowerCase();
 
 let cards =
-document.querySelectorAll(".produk-card");
+document
+.querySelectorAll(".produk-card");
 
 cards.forEach(card=>{
 
@@ -123,24 +116,18 @@ text.includes(input)
 
 }
 
-// THEME
-
 function setTheme(mode){
 
 if(mode==="dark"){
 
-document.body.classList.add("dark");
+document.body.style.background=
+"linear-gradient(135deg,#111827,#1f2937,#374151)";
 
 }else{
 
-document.body.classList.remove("dark");
+document.body.style.background=
+"linear-gradient(135deg,#134e4a,#166534,#15803d)";
 
 }
-
-}
-
-window.onload=()=>{
-
-showPage("dashboard");
 
 }
