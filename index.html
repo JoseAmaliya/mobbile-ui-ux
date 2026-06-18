@@ -1,11 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>🍵 Matcha & Pastry Cafe</title>
+<title>Matcha & Pastry Cafe</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,263 +13,96 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-<!-- LOGIN -->
-<div id="loginPage" class="login-page">
-
-<div class="glass-card login-card">
+<div id="loginPage">
 
 <h1>🍵 Matcha & Pastry Cafe</h1>
 
-<p class="demo">
-Fresh Matcha • Artisan Pastry
-</p>
+<input type="text" id="username" placeholder="Username">
 
-<input id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
 
-<input id="password"
-type="password"
-placeholder="Password">
+<button onclick="login()">Masuk</button>
 
-<button onclick="login()">
-Masuk
-</button>
-
-<p class="demo">
+<p>
 admin / admin123
 </p>
 
 </div>
 
-</div>
-
-<!-- APP -->
 <div id="app" style="display:none;">
-
-<!-- DRAWER -->
-<div id="drawer" class="drawer">
-
-<h2>☰ Menu</h2>
-
-<a onclick="showPage('dashboard')">
-<i class="fas fa-home"></i>
-Dashboard
-</a>
-
-<a onclick="showPage('produk')">
-<i class="fas fa-mug-hot"></i>
-Produk
-</a>
-
-<a onclick="showPage('profil')">
-<i class="fas fa-user"></i>
-Profil
-</a>
-
-<a onclick="showPage('setting')">
-<i class="fas fa-gear"></i>
-Pengaturan
-</a>
-
-<a onclick="logout()">
-<i class="fas fa-right-from-bracket"></i>
-Logout
-</a>
-
-</div>
-
-<!-- TOPBAR -->
-<div class="topbar">
-
-<i class="fas fa-bars"
-onclick="toggleDrawer()"></i>
 
 <h2>🍵 Matcha & Pastry Cafe</h2>
 
-</div>
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('produk')">Produk</button>
+<button onclick="showPage('profil')">Profil</button>
+<button onclick="showPage('setting')">Setting</button>
 
-<div class="container">
-
-<!-- DASHBOARD -->
-<section id="dashboard" class="page active">
+<section id="dashboard" class="page">
 
 <h1>Dashboard</h1>
 
-<div class="dashboard-grid">
-
-<div class="glass-card stat">
-<h2>22</h2>
-<p>Total Menu</p>
-</div>
-
-<div class="glass-card stat">
-<h2>10</h2>
-<p>Matcha Series</p>
-</div>
-
-<div class="glass-card stat">
-<h2>12</h2>
-<p>Pastry Series</p>
-</div>
-
-<div class="glass-card stat">
-<h2>4.9★</h2>
-<p>Rating Pelanggan</p>
-</div>
-
-</div>
+<p>Total Menu : 22</p>
+<p>Matcha Series : 10</p>
+<p>Pastry Series : 12</p>
 
 </section>
 
-<!-- PRODUK -->
-<section id="produk" class="page">
+<section id="produk" class="page" style="display:none;">
 
-<h1>🍵 Matcha & Pastry Menu</h1>
-
-<div class="search-box">
+<h1>Produk</h1>
 
 <input
 type="text"
 id="searchMenu"
-placeholder="🔍 Cari menu..."
+placeholder="Cari menu..."
 onkeyup="searchMenu()">
 
+<div class="produk-card">
+<h3>Matcha Latte</h3>
 </div>
 
-<div class="produk-grid">
-
-<div class="glass-card produk-card">
-<h3>🍵 Matcha Latte</h3>
-<p>Rp 28.000</p>
-<button>Pesan</button>
+<div class="produk-card">
+<h3>Iced Matcha Latte</h3>
 </div>
 
-<div class="glass-card produk-card">
-<h3>🧊 Iced Matcha Latte</h3>
-<p>Rp 30.000</p>
-<button>Pesan</button>
+<div class="produk-card">
+<h3>Butter Croissant</h3>
 </div>
 
-<div class="glass-card produk-card">
-<h3>🍓 Strawberry Matcha Latte</h3>
-<p>Rp 35.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🥭 Mango Matcha Latte</h3>
-<p>Rp 35.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🥐 Butter Croissant</h3>
-<p>Rp 22.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🌰 Almond Croissant</h3>
-<p>Rp 28.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍎 Apple Danish</h3>
-<p>Rp 28.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍇 Mixed Berry Danish</h3>
-<p>Rp 31.000</p>
-<button>Pesan</button>
-</div>
-
+<div class="produk-card">
+<h3>Apple Danish</h3>
 </div>
 
 </section>
 
-<!-- PROFIL -->
-<section id="profil" class="page">
+<section id="profil" class="page" style="display:none;">
 
-<div class="glass-card profile-card">
-
-<img src="https://i.pravatar.cc/150">
-
-<h2 id="userName">
-Cafe Manager
-</h2>
+<h1 id="userName">Admin</h1>
 
 <p id="userRole">
-Matcha & Pastry Cafe
+Administrator
 </p>
-
-</div>
 
 </section>
 
-<!-- SETTING -->
-<section id="setting" class="page">
+<section id="setting" class="page" style="display:none;">
 
-<div class="glass-card setting-card">
-
-<h2>⚙ Pengaturan</h2>
-
-<h3>Tampilan</h3>
+<h2>Pengaturan</h2>
 
 <button onclick="setTheme('dark')">
-🌙 Dark Mode
+Dark Mode
 </button>
 
 <button onclick="setTheme('light')">
-☀ Light Mode
+Light Mode
 </button>
 
-<hr>
-
-<h3>Akun Demo</h3>
-
-<p>Admin : admin / admin123</p>
-<p>Manager : jose / jose123</p>
-<p>Guest : guest / guest123</p>
-
-<hr>
-
-<button class="logout-btn"
-onclick="logout()">
-🚪 Logout
+<button onclick="logout()">
+Logout
 </button>
-
-</div>
 
 </section>
-
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-
-<a onclick="showPage('dashboard')">
-<i class="fas fa-home"></i>
-<span>Home</span>
-</a>
-
-<a onclick="showPage('produk')">
-<i class="fas fa-search"></i>
-<span>Cari</span>
-</a>
-
-<a onclick="showPage('profil')">
-<i class="fas fa-user"></i>
-<span>Profil</span>
-</a>
-
-<a onclick="showPage('setting')">
-<i class="fas fa-gear"></i>
-<span>Setting</span>
-</a>
-
-</div>
 
 </div>
 
@@ -279,4 +110,3 @@ onclick="logout()">
 
 </body>
 </html>
-```
