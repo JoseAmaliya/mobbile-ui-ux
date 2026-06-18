@@ -1,44 +1,59 @@
 const users = [
+
 {
 username:"admin",
 password:"admin123",
 role:"Administrator"
+},
+
+{
+username:"jose",
+password:"jose123",
+role:"User"
+},
+
+{
+username:"guest",
+password:"guest123",
+role:"Guest"
 }
+
 ];
 
 function login(){
 
-const user =
+const username =
 document.getElementById("username").value;
 
-const pass =
+const password =
 document.getElementById("password").value;
 
-const found =
+const user =
 users.find(u =>
-u.username === user &&
-u.password === pass
+u.username === username &&
+u.password === password
 );
 
-if(found){
+if(user){
 
 document.getElementById("loginPage")
-.style.display = "none";
+.style.display="none";
 
 document.getElementById("app")
-.style.display = "block";
+.style.display="block";
 
-document.getElementById("userName")
-.innerHTML = found.username;
+document.getElementById("namaUser")
+.innerHTML=user.username;
 
-document.getElementById("userRole")
-.innerHTML = found.role;
+document.getElementById("roleUser")
+.innerHTML=user.role;
 
 }else{
 
 alert("Login gagal");
 
 }
+
 }
 
 function logout(){
@@ -49,7 +64,8 @@ location.reload();
 
 function toggleDrawer(){
 
-document.getElementById("drawer")
+document
+.getElementById("drawer")
 .classList.toggle("active");
 
 }
