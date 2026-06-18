@@ -1,22 +1,27 @@
 const users = [
+
 {
 username:"admin",
 password:"admin123",
 role:"Administrator"
 },
+
 {
 username:"jose",
 password:"jose123",
 role:"Manager"
 },
+
 {
 username:"guest",
 password:"guest123",
 role:"Customer"
 }
+
 ];
 
 // LOGIN
+
 function login(){
 
 let username =
@@ -27,38 +32,46 @@ document.getElementById("password").value;
 
 let user =
 users.find(u =>
-u.username === username &&
-u.password === password
+u.username===username &&
+u.password===password
 );
 
 if(user){
 
-document.getElementById("loginPage").style.display="none";
+document.getElementById("loginPage")
+.style.display="none";
 
-document.getElementById("app").style.display="block";
+document.getElementById("app")
+.style.display="block";
 
-document.getElementById("userName").innerHTML =
-user.username;
+document.getElementById("userName")
+.innerHTML=user.username;
 
-document.getElementById("userRole").innerHTML =
-user.role;
+document.getElementById("userRole")
+.innerHTML=user.role;
 
 }else{
-alert("Username atau Password salah!");
+
+alert("Login Gagal!");
+
 }
 
 }
 
 // LOGOUT
+
 function logout(){
 
-document.getElementById("app").style.display="none";
+document.getElementById("app")
+.style.display="none";
 
-document.getElementById("loginPage").style.display="flex";
+document.getElementById("loginPage")
+.style.display="flex";
 
 }
 
 // DRAWER
+
 function toggleDrawer(){
 
 document.getElementById("drawer")
@@ -66,17 +79,18 @@ document.getElementById("drawer")
 
 }
 
-// PINDAH HALAMAN
-function showPage(pageId){
+// PINDAH PAGE
 
-let pages =
-document.querySelectorAll(".page");
+function showPage(id){
 
-pages.forEach(page=>{
+document.querySelectorAll(".page")
+.forEach(page=>{
+
 page.style.display="none";
+
 });
 
-document.getElementById(pageId)
+document.getElementById(id)
 .style.display="block";
 
 document.getElementById("drawer")
@@ -84,7 +98,8 @@ document.getElementById("drawer")
 
 }
 
-// SEARCH MENU
+// SEARCH
+
 function searchMenu(){
 
 let input =
@@ -99,42 +114,33 @@ cards.forEach(card=>{
 let text =
 card.innerText.toLowerCase();
 
-if(text.includes(input)){
-card.style.display="block";
-}else{
-card.style.display="none";
-}
+card.style.display =
+text.includes(input)
+? "block"
+: "none";
 
 });
 
 }
 
-// DARK MODE
+// THEME
+
 function setTheme(mode){
 
 if(mode==="dark"){
 
-document.body.style.background =
-"linear-gradient(135deg,#0f172a,#1e293b,#334155)";
+document.body.classList.add("dark");
 
 }else{
 
-document.body.style.background =
-"linear-gradient(135deg,#1b4332,#2d6a4f,#52b788,#95d5b2)";
+document.body.classList.remove("dark");
 
 }
 
 }
 
-// DEFAULT
-window.onload = ()=>{
+window.onload=()=>{
 
-document.querySelectorAll(".page")
-.forEach(page=>{
-page.style.display="none";
-});
+showPage("dashboard");
 
-document.getElementById("dashboard")
-.style.display="block";
-
-};
+}
