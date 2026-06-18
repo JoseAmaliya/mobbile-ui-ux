@@ -174,17 +174,60 @@ Administrator
 <!-- SETTING -->
 <section id="setting" class="page">
 
-<div class="glass-card">
+<div class="glass setting-card">
 
-<h2>Pengaturan</h2>
+<h2>⚙ Pengaturan</h2>
 
-<label>
+<hr>
 
-<input type="checkbox">
+<h3>Tampilan</h3>
 
- Dark Mode
+<div class="setting-item">
 
-</label>
+<button onclick="setTheme('dark')">
+🌙 Dark Mode
+</button>
+
+<button onclick="setTheme('light')">
+☀ Light Mode
+</button>
+
+</div>
+
+<hr>
+
+<h3>Akun Demo</h3>
+
+<div class="account-list">
+
+<div class="account-card">
+<h4>Administrator</h4>
+<p>Username: admin</p>
+<p>Password: admin123</p>
+</div>
+
+<div class="account-card">
+<h4>User</h4>
+<p>Username: jose</p>
+<p>Password: jose123</p>
+</div>
+
+<div class="account-card">
+<h4>Guest</h4>
+<p>Username: guest</p>
+<p>Password: guest123</p>
+</div>
+
+</div>
+
+<hr>
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
 
 </div>
 
