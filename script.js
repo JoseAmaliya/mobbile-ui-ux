@@ -83,3 +83,25 @@ document
 .classList.add("active");
 
 }
+
+function setTheme(mode){
+
+if(mode === "light"){
+
+document.body.style.background =
+"linear-gradient(135deg,#e0e7ff,#dbeafe,#f8fafc)";
+
+document.body.style.color =
+"#111827";
+
+}else{
+
+document.body.style.background =
+"linear-gradient(135deg,#0f172a,#312e81,#7c3aed)";
+
+document.body.style.color =
+"white";
+
+}
+
+}
