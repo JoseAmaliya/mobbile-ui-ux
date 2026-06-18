@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍵 Matcha & Pastry Cafe</title>
+<title>Matcha & Pastry Cafe</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,7 +19,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="glass-card login-card">
 
-<h1>🍵 Matcha & Pastry Cafe</h1>
+<h1>🍵 Matcha Bliss Cafe</h1>
 
 <p>Fresh Matcha & Artisan Pastry</p>
 
@@ -29,18 +29,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 type="password"
 placeholder="Password">
 
-<button onclick="login()">Masuk</button>
+<button onclick="login()">
+Masuk
+</button>
 
-<p class="demo">
-admin/admin123
-</p>
+<div class="akun-demo">
+
+<p><b>Admin</b> : admin / admin123</p>
+
+<p><b>Jose</b> : jose / jose123</p>
+
+<p><b>Guest</b> : guest / guest123</p>
+
+</div>
 
 </div>
 
 </div>
 
 <!-- APP -->
-<div id="app" style="display:none;">
+<div id="app">
 
 <!-- DRAWER -->
 <div id="drawer" class="drawer">
@@ -48,23 +56,28 @@ admin/admin123
 <h2>☰ Menu</h2>
 
 <a onclick="showPage('dashboard')">
-<i class="fas fa-home"></i> Dashboard
+<i class="fas fa-chart-line"></i>
+Dashboard
 </a>
 
 <a onclick="showPage('produk')">
-<i class="fas fa-mug-hot"></i> Produk
+<i class="fas fa-mug-hot"></i>
+Produk
 </a>
 
 <a onclick="showPage('profil')">
-<i class="fas fa-user"></i> Profil
+<i class="fas fa-user"></i>
+Profil
 </a>
 
 <a onclick="showPage('setting')">
-<i class="fas fa-gear"></i> Pengaturan
+<i class="fas fa-gear"></i>
+Pengaturan
 </a>
 
 <a onclick="logout()">
-<i class="fas fa-right-from-bracket"></i> Logout
+<i class="fas fa-right-from-bracket"></i>
+Logout
 </a>
 
 </div>
@@ -75,7 +88,14 @@ admin/admin123
 <i class="fas fa-bars"
 onclick="toggleDrawer()"></i>
 
-<h2>🍵 Matcha & Pastry Cafe</h2>
+<h2>🍵 Matcha Bliss Cafe</h2>
+
+<button class="refresh-btn"
+onclick="refreshPage()">
+
+<i class="fas fa-rotate"></i>
+
+</button>
 
 </div>
 
@@ -88,22 +108,22 @@ onclick="toggleDrawer()"></i>
 
 <div class="dashboard-grid">
 
-<div class="glass-card stat">
+<div class="glass-card stat-card">
+<h2>1250</h2>
+<p>Pesanan</p>
+</div>
+
+<div class="glass-card stat-card">
 <h2>22</h2>
 <p>Total Menu</p>
 </div>
 
-<div class="glass-card stat">
-<h2>10</h2>
-<p>Matcha Series</p>
+<div class="glass-card stat-card">
+<h2>98%</h2>
+<p>Kepuasan</p>
 </div>
 
-<div class="glass-card stat">
-<h2>12</h2>
-<p>Pastry Series</p>
-</div>
-
-<div class="glass-card stat">
+<div class="glass-card stat-card">
 <h2>4.9★</h2>
 <p>Rating</p>
 </div>
@@ -115,31 +135,23 @@ onclick="toggleDrawer()"></i>
 <!-- PRODUK -->
 <section id="produk" class="page">
 
-<h1>🍵 Menu Produk</h1>
+<h1>🍵 Produk</h1>
 
 <div class="search-box">
 
 <input
 type="text"
 id="searchMenu"
-placeholder="Cari Menu..."
+placeholder="Cari menu..."
 onkeyup="searchMenu()">
 
 </div>
 
 <div class="produk-grid">
 
-<!-- MATCHA -->
-
 <div class="glass-card produk-card">
 <h3>🍵 Matcha Latte</h3>
 <p>Rp 28.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🧊 Iced Matcha Latte</h3>
-<p>Rp 30.000</p>
 <button>Pesan</button>
 </div>
 
@@ -156,52 +168,8 @@ onkeyup="searchMenu()">
 </div>
 
 <div class="glass-card produk-card">
-<h3>🥥 Coconut Matcha Latte</h3>
-<p>Rp 34.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🌿 Vanilla Matcha Latte</h3>
-<p>Rp 32.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍯 Brown Sugar Matcha Latte</h3>
-<p>Rp 36.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🐝 Honey Matcha Latte</h3>
-<p>Rp 34.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>☁️ Matcha Cloud Latte</h3>
-<p>Rp 38.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🥛 Creamy Matcha Latte</h3>
-<p>Rp 37.000</p>
-<button>Pesan</button>
-</div>
-
-<!-- CROISSANT -->
-
-<div class="glass-card produk-card">
 <h3>🥐 Butter Croissant</h3>
 <p>Rp 22.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🌰 Almond Croissant</h3>
-<p>Rp 28.000</p>
 <button>Pesan</button>
 </div>
 
@@ -212,64 +180,15 @@ onkeyup="searchMenu()">
 </div>
 
 <div class="glass-card produk-card">
-<h3>🍵 Matcha Croissant</h3>
-<p>Rp 30.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍓 Strawberry Croissant</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🧀 Ham & Cheese Croissant</h3>
-<p>Rp 32.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🐟 Tuna Mayo Croissant</h3>
-<p>Rp 33.000</p>
-<button>Pesan</button>
-</div>
-
-<!-- DANISH -->
-
-<div class="glass-card produk-card">
 <h3>🍎 Apple Danish</h3>
 <p>Rp 28.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🫐 Blueberry Danish</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍓 Strawberry Danish</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍮 Custard Danish</h3>
-<p>Rp 30.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍇 Mixed Berry Danish</h3>
-<p>Rp 31.000</p>
 <button>Pesan</button>
 </div>
 
 </div>
 
 </section>
+
 <!-- PROFIL -->
 <section id="profil" class="page">
 
@@ -278,23 +197,15 @@ onkeyup="searchMenu()">
 <img id="profileImg"
 src="https://api.dicebear.com/7.x/shapes/svg?seed=Admin">
 
-<h2 id="userName">Admin</h2>
+<h2 id="userName">
+Admin
+</h2>
 
 <p id="userRole">
 Administrator
 </p>
 
-<hr>
-
-<p>📧 admin@matchacafe.com</p>
-
-<p>📱 +8340239</p>
-
-<p>📍 Bogor, Indonesia</p>
-
 </div>
-
-</section>
 
 </section>
 
@@ -312,12 +223,6 @@ Administrator
 <button onclick="setTheme('light')">
 ☀ Light Mode
 </button>
-
-<hr>
-
-<p>Admin : admin/admin123</p>
-<p>Jose : jose/jose123</p>
-<p>Guest : guest/guest123</p>
 
 </div>
 
@@ -347,8 +252,6 @@ Administrator
 <i class="fas fa-gear"></i>
 <span>Setting</span>
 </a>
-
-</div>
 
 </div>
 
