@@ -3,34 +3,88 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Matcha UI/UX</title>
+    <!-- SEO -->
+    <meta name="description"
+          content="Matcha Cafe UI/UX modern dengan menu matcha latte, bottom navigation, drawer menu, tabs bar, dan card interaktif.">
+
+    <meta name="keywords"
+          content="Matcha Cafe, UI UX, Matcha Latte, HTML CSS JavaScript">
+
+    <meta name="author"
+          content="Jose Amaliya">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+          content="Matcha Cafe - Modern UI UX Design">
+
+    <meta property="og:description"
+          content="Modern UI/UX cafe dengan desain responsive dan interaktif.">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:locale"
+          content="id_ID">
+
+    <!-- TITLE -->
+    <title>
+        Matcha Cafe - Modern UI UX Design
+    </title>
+
+    <!-- FAVICON -->
+    <link rel="icon"
+          type="image/png"
+          href="https://cdn-icons-png.flaticon.com/512/415/415733.png">
 
     <!-- FONT -->
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
+
 <body>
 
 <!-- OVERLAY -->
-<div class="overlay" id="overlay"></div>
+<div class="overlay"
+     id="overlay"></div>
 
 <!-- DRAWER MENU -->
-<nav class="drawer" id="drawer">
+<nav class="drawer"
+     id="drawer">
 
-    <a href="javascript:void(0)">Home</a>
-    <a href="javascript:void(0)">Menu</a>
-    <a href="javascript:void(0)">Favorite</a>
-    <a href="javascript:void(0)">Profile</a>
+    <a href="javascript:void(0)">
+        Home
+    </a>
+
+    <a href="javascript:void(0)">
+        Menu
+    </a>
+
+    <a href="javascript:void(0)">
+        Favorite
+    </a>
+
+    <a href="javascript:void(0)">
+        Profile
+    </a>
 
 </nav>
 
@@ -39,15 +93,20 @@
 
     <div class="left-header">
 
+        <!-- BURGER MENU -->
         <button class="menu-btn"
-                id="menuBtn">
+                id="menuBtn"
+                aria-label="Open Navigation Menu">
 
             ☰
 
         </button>
 
+        <!-- LOGO -->
         <div class="logo">
+
             Matcha Cafe
+
         </div>
 
     </div>
@@ -56,19 +115,32 @@
     <div class="apps-menu">
 
         <button class="apps-btn"
-                id="appsBtn">
+                id="appsBtn"
+                aria-label="Open Category Menu">
 
             Category ▼
 
         </button>
 
+        <!-- DROPDOWN -->
         <div class="dropdown"
              id="dropdownMenu">
 
-            <a href="#">Hot Drinks</a>
-            <a href="#">Cold Drinks</a>
-            <a href="#">Dessert</a>
-            <a href="#">Promo</a>
+            <a href="javascript:void(0)">
+                Hot Drinks
+            </a>
+
+            <a href="javascript:void(0)">
+                Cold Drinks
+            </a>
+
+            <a href="javascript:void(0)">
+                Dessert
+            </a>
+
+            <a href="javascript:void(0)">
+                Promo
+            </a>
 
         </div>
 
@@ -83,19 +155,27 @@
     <div class="tabs">
 
         <button class="tab-btn active">
+
             All Menu
+
         </button>
 
         <button class="tab-btn">
+
             Favorite
+
         </button>
 
         <button class="tab-btn">
+
             Popular
+
         </button>
 
         <button class="tab-btn">
+
             New
+
         </button>
 
     </div>
@@ -107,7 +187,9 @@
         <!-- CARD 1 -->
         <div class="card">
 
-            <h3>Matcha Latte</h3>
+            <h3>
+                Matcha Latte
+            </h3>
 
             <p>
                 Perpaduan matcha premium
@@ -117,12 +199,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -132,7 +220,9 @@
         <!-- CARD 2 -->
         <div class="card">
 
-            <h3>Iced Matcha Latte</h3>
+            <h3>
+                Iced Matcha Latte
+            </h3>
 
             <p>
                 Matcha dingin segar
@@ -142,12 +232,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Iced Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Iced Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -157,7 +253,9 @@
         <!-- CARD 3 -->
         <div class="card">
 
-            <h3>Strawberry Matcha Latte</h3>
+            <h3>
+                Strawberry Matcha Latte
+            </h3>
 
             <p>
                 Kombinasi strawberry
@@ -167,12 +265,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Strawberry Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Strawberry Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -182,7 +286,9 @@
         <!-- CARD 4 -->
         <div class="card">
 
-            <h3>Mango Matcha Latte</h3>
+            <h3>
+                Mango Matcha Latte
+            </h3>
 
             <p>
                 Matcha dengan rasa
@@ -192,12 +298,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Mango Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Mango Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -207,7 +319,9 @@
         <!-- CARD 5 -->
         <div class="card">
 
-            <h3>Coconut Matcha Latte</h3>
+            <h3>
+                Coconut Matcha Latte
+            </h3>
 
             <p>
                 Matcha creamy dengan
@@ -217,12 +331,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Coconut Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Coconut Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -232,7 +352,9 @@
         <!-- CARD 6 -->
         <div class="card">
 
-            <h3>Vanilla Matcha Latte</h3>
+            <h3>
+                Vanilla Matcha Latte
+            </h3>
 
             <p>
                 Aroma vanilla manis
@@ -242,12 +364,18 @@
             <div class="card-buttons">
 
                 <button class="btn delete-btn"
-                        onclick="deleteCard(this)">
+                        onclick="deleteCard(this)"
+                        aria-label="Delete Vanilla Matcha Latte">
+
                     Delete
+
                 </button>
 
-                <button class="btn refresh-btn">
+                <button class="btn refresh-btn"
+                        aria-label="Refresh Vanilla Matcha Latte">
+
                     Refresh
+
                 </button>
 
             </div>
@@ -261,11 +389,14 @@
          id="undoBox">
 
         <span>
+
             Card berhasil dihapus
+
         </span>
 
         <button class="undo-btn"
-                onclick="undoDelete()">
+                onclick="undoDelete()"
+                aria-label="Undo Delete">
 
             Undo
 
@@ -276,27 +407,46 @@
 </main>
 
 <!-- BOTTOM NAV -->
-<!-- BOTTOM NAV -->
 <nav class="bottom-nav">
 
     <div class="bottom-item active-nav">
+
         🏠
-        <div>Home</div>
+
+        <div>
+            Home
+        </div>
+
     </div>
 
     <div class="bottom-item">
+
         ❤️
-        <div>Favorite</div>
+
+        <div>
+            Favorite
+        </div>
+
     </div>
 
     <div class="bottom-item">
+
         🛒
-        <div>Order</div>
+
+        <div>
+            Order
+        </div>
+
     </div>
 
     <div class="bottom-item">
+
         👤
-        <div>Profile</div>
+
+        <div>
+            Profile
+        </div>
+
     </div>
 
 </nav>
