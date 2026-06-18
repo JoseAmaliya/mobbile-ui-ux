@@ -101,3 +101,23 @@ function undoDelete(){
     }
 
 }
+/* BOTTOM NAV ACTIVE */
+
+const bottomItems =
+document.querySelectorAll('.bottom-item');
+
+bottomItems.forEach(item => {
+
+    item.addEventListener('click', () => {
+
+        bottomItems.forEach(nav => {
+
+            nav.classList.remove('active-nav');
+
+        });
+
+        item.classList.add('active-nav');
+
+    });
+
+});
