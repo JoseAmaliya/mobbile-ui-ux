@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GlassMorph Dashboard</title>
+<title>🍵 Matcha & Pastry Cafe</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,7 +20,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="glass-card login-card">
 
-<h1>🚀 GlassMorph App</h1>
+<h1>🍵 Matcha & Pastry Cafe</h1>
+
+<p class="demo">
+Fresh Matcha • Artisan Pastry
+</p>
 
 <input id="username" placeholder="Username">
 
@@ -45,15 +50,15 @@ admin / admin123
 <!-- DRAWER -->
 <div id="drawer" class="drawer">
 
-<h2>Menu</h2>
+<h2>☰ Menu</h2>
 
 <a onclick="showPage('dashboard')">
-<i class="fas fa-chart-line"></i>
+<i class="fas fa-home"></i>
 Dashboard
 </a>
 
 <a onclick="showPage('produk')">
-<i class="fas fa-box"></i>
+<i class="fas fa-mug-hot"></i>
 Produk
 </a>
 
@@ -64,7 +69,7 @@ Profil
 
 <a onclick="showPage('setting')">
 <i class="fas fa-gear"></i>
-Setting
+Pengaturan
 </a>
 
 <a onclick="logout()">
@@ -80,7 +85,7 @@ Logout
 <i class="fas fa-bars"
 onclick="toggleDrawer()"></i>
 
-<h2>GlassMorph UI</h2>
+<h2>🍵 Matcha & Pastry Cafe</h2>
 
 </div>
 
@@ -94,23 +99,23 @@ onclick="toggleDrawer()"></i>
 <div class="dashboard-grid">
 
 <div class="glass-card stat">
-<h2>250</h2>
-<p>User</p>
+<h2>22</h2>
+<p>Total Menu</p>
 </div>
 
 <div class="glass-card stat">
-<h2>120</h2>
-<p>Produk</p>
+<h2>10</h2>
+<p>Matcha Series</p>
 </div>
 
 <div class="glass-card stat">
-<h2>89</h2>
-<p>Pesanan</p>
+<h2>12</h2>
+<p>Pastry Series</p>
 </div>
 
 <div class="glass-card stat">
-<h2>5JT</h2>
-<p>Pendapatan</p>
+<h2>4.9★</h2>
+<p>Rating Pelanggan</p>
 </div>
 
 </div>
@@ -123,16 +128,16 @@ onclick="toggleDrawer()"></i>
 <h1>🍵 Matcha & Pastry Menu</h1>
 
 <div class="search-box">
+
 <input
 type="text"
 id="searchMenu"
-placeholder="Cari menu..."
+placeholder="🔍 Cari menu..."
 onkeyup="searchMenu()">
+
 </div>
 
 <div class="produk-grid">
-
-<!-- MATCHA -->
 
 <div class="glass-card produk-card">
 <h3>🍵 Matcha Latte</h3>
@@ -159,44 +164,6 @@ onkeyup="searchMenu()">
 </div>
 
 <div class="glass-card produk-card">
-<h3>🥥 Coconut Matcha Latte</h3>
-<p>Rp 34.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🌿 Vanilla Matcha Latte</h3>
-<p>Rp 32.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍯 Brown Sugar Matcha Latte</h3>
-<p>Rp 36.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🐝 Honey Matcha Latte</h3>
-<p>Rp 34.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>☁ Matcha Cloud Latte</h3>
-<p>Rp 38.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🥛 Creamy Matcha Latte</h3>
-<p>Rp 37.000</p>
-<button>Pesan</button>
-</div>
-
-<!-- CROISSANT -->
-
-<div class="glass-card produk-card">
 <h3>🥐 Butter Croissant</h3>
 <p>Rp 22.000</p>
 <button>Pesan</button>
@@ -209,58 +176,8 @@ onkeyup="searchMenu()">
 </div>
 
 <div class="glass-card produk-card">
-<h3>🍫 Chocolate Croissant</h3>
-<p>Rp 27.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍵 Matcha Croissant</h3>
-<p>Rp 30.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍓 Strawberry Croissant</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🧀 Ham & Cheese Croissant</h3>
-<p>Rp 32.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🐟 Tuna Mayo Croissant</h3>
-<p>Rp 33.000</p>
-<button>Pesan</button>
-</div>
-
-<!-- DANISH -->
-
-<div class="glass-card produk-card">
 <h3>🍎 Apple Danish</h3>
 <p>Rp 28.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🫐 Blueberry Danish</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍓 Strawberry Danish</h3>
-<p>Rp 29.000</p>
-<button>Pesan</button>
-</div>
-
-<div class="glass-card produk-card">
-<h3>🍮 Custard Danish</h3>
-<p>Rp 30.000</p>
 <button>Pesan</button>
 </div>
 
@@ -282,11 +199,11 @@ onkeyup="searchMenu()">
 <img src="https://i.pravatar.cc/150">
 
 <h2 id="userName">
-Admin
+Cafe Manager
 </h2>
 
 <p id="userRole">
-Administrator
+Matcha & Pastry Cafe
 </p>
 
 </div>
@@ -296,15 +213,11 @@ Administrator
 <!-- SETTING -->
 <section id="setting" class="page">
 
-<div class="glass setting-card">
+<div class="glass-card setting-card">
 
 <h2>⚙ Pengaturan</h2>
 
-<hr>
-
 <h3>Tampilan</h3>
-
-<div class="setting-item">
 
 <button onclick="setTheme('dark')">
 🌙 Dark Mode
@@ -314,41 +227,19 @@ Administrator
 ☀ Light Mode
 </button>
 
-</div>
-
 <hr>
 
 <h3>Akun Demo</h3>
 
-<div class="account-list">
-
-<div class="account-card">
-<h4>Administrator</h4>
-<p>Username: admin</p>
-<p>Password: admin123</p>
-</div>
-
-<div class="account-card">
-<h4>User</h4>
-<p>Username: jose</p>
-<p>Password: jose123</p>
-</div>
-
-<div class="account-card">
-<h4>Guest</h4>
-<p>Username: guest</p>
-<p>Password: guest123</p>
-</div>
-
-</div>
+<p>Admin : admin / admin123</p>
+<p>Manager : jose / jose123</p>
+<p>Guest : guest / guest123</p>
 
 <hr>
 
 <button class="logout-btn"
 onclick="logout()">
-
 🚪 Logout
-
 </button>
 
 </div>
@@ -388,3 +279,4 @@ onclick="logout()">
 
 </body>
 </html>
+```
