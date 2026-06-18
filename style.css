@@ -176,3 +176,49 @@ display:none;
 .page.active{
 display:block;
 }
+
+.setting-card{
+padding:25px;
+}
+
+.setting-card h2{
+margin-bottom:20px;
+}
+
+.setting-card h3{
+margin:15px 0;
+}
+
+.setting-item{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.setting-item button{
+flex:1;
+}
+
+.account-list{
+display:grid;
+gap:15px;
+margin-top:15px;
+}
+
+.account-card{
+background:rgba(255,255,255,.08);
+padding:15px;
+border-radius:15px;
+}
+
+.account-card h4{
+margin-bottom:10px;
+}
+
+.logout-btn{
+width:100%;
+margin-top:20px;
+background:#ef4444;
+color:white;
+}
