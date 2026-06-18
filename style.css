@@ -1,36 +1,71 @@
 body{
- background:#eef2ff;
- font-family:Poppins,sans-serif;
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+    135deg,
+    #4f46e5,
+    #2563eb,
+    #06b6d4
+    );
 }
 
-.topbar{
- background:linear-gradient(
- 135deg,
- #2563eb,
- #1e40af
- );
- color:white;
+.login-box{
+    width:350px;
+    padding:30px;
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.15);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,.2);
+
+    text-align:center;
 }
 
-.card{
- background:white;
- border-radius:20px;
- padding:20px;
- box-shadow:
- 0 10px 25px rgba(0,0,0,.1);
-
- transition:.3s;
+.login-box h1{
+    color:white;
 }
 
-.card:hover{
- transform:translateY(-8px);
+.login-box input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:12px;
 }
 
-button{
- background:#2563eb;
- color:white;
- border:none;
- padding:12px;
- border-radius:10px;
- cursor:pointer;
+.login-box button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
+
+    gap:15px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
 }
