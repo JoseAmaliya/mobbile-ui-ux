@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile UI/UX Demo</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* TOP APP BAR */
+.topbar{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.menu-btn{
+    cursor:pointer;
+    font-size:22px;
+}
+
+.submenu{
+    position:relative;
+}
+
+.submenu-content{
+    display:none;
+    position:absolute;
+    right:0;
+    background:white;
+    min-width:150px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.submenu-content a{
+    display:block;
+    padding:10px;
+    color:black;
+    text-decoration:none;
+}
+
+.submenu-content a:hover{
+    background:#eee;
+}
+
+.submenu:hover .submenu-content{
+    display:block;
+}
+
+/* DRAWER */
+.drawer{
+    width:250px;
+    height:100%;
+    background:white;
+    position:fixed;
+    top:0;
+    left:-250px;
+    transition:.3s;
+    box-shadow:2px 0 10px rgba(0,0,0,.2);
+    z-index:1000;
+}
+
+.drawer.active{
+    left:0;
+}
+
+.drawer h2{
+    padding:20px;
+    background:#2563eb;
+    color:white;
+}
+
+.drawer a{
+    display:block;
+    padding:15px 20px;
+    text-decoration:none;
+    color:black;
+}
+
+.drawer a:hover{
+    background:#f1f1f1;
+}
+
+/* TAB BAR */
+.tabs{
+    display:flex;
+    background:white;
+    margin-top:10px;
+}
+
+.tab{
+    flex:1;
+    padding:12px;
+    text-align:center;
+    cursor:pointer;
+    border-bottom:3px solid transparent;
+}
+
+.tab.active{
+    border-bottom:3px solid #2563eb;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+/* CONTENT */
+.content{
+    padding:15px;
+    padding-bottom:80px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card button{
+    margin-top:10px;
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* UNDO */
+.undo-box{
+    display:none;
+    background:#111827;
+    color:white;
+    padding:12px;
+    position:fixed;
+    bottom:70px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:8px;
+}
+
+.undo-box button{
+    background:orange;
+    border:none;
+    padding:5px 10px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+}
+
+.bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    color:#555;
+    text-decoration:none;
+}
+
+.bottom-nav a:hover{
+    color:#2563eb;
+}
+</style>
+</head>
+<body>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+    <h2>Menu</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Profil</a>
+    <a href="#">Pengaturan</a>
+    <a href="#">Logout</a>
+</div>
+
+<!-- TOP APP BAR -->
+<div class="topbar">
+    <div class="menu-btn" onclick="toggleDrawer()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <h3>Mobile UI</h3>
+
+    <div class="submenu">
+        <i class="fas fa-ellipsis-vertical"></i>
+
+        <div class="submenu-content">
+            <a href="#">Tambah</a>
+            <a href="#">Edit</a>
+            <a href="#">Bantuan</a>
+        </div>
+    </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tabs">
+    <div class="tab active">Beranda</div>
+    <div class="tab">Produk</div>
+    <div class="tab">Profil</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <div class="card" id="card1">
+        <h3>Kartu Produk</h3>
+        <p>Contoh card dengan animasi hover.</p>
+        <button onclick="deleteCard('card1')">
+            Hapus
+        </button>
+    </div>
+
+    <div class="card" id="card2">
+        <h3>Kartu Berita</h3>
+        <p>Desain mobile sederhana dan modern.</p>
+        <button onclick="deleteCard('card2')">
+            Hapus
+        </button>
+    </div>
+
+</div>
+
+<!-- UNDO DELETE -->
+<div class="undo-box" id="undoBox">
+    Data dihapus
+    <button onclick="undoDelete()">
+        Undo
+    </button>
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+<div class="bottom-nav">
+    <a href="#"><i class="fas fa-home"></i><br>Home</a>
+    <a href="#"><i class="fas fa-search"></i><br>Cari</a>
+    <a href="#"><i class="fas fa-user"></i><br>Akun</a>
+</div>
+
+<script>
+function toggleDrawer(){
+    document.getElementById("drawer")
+    .classList.toggle("active");
+}
+
+let deletedCard = null;
+
+function deleteCard(id){
+    deletedCard = document.getElementById(id);
+
+    deletedCard.style.display = "none";
+
+    document.getElementById("undoBox")
+    .style.display = "block";
+
+    setTimeout(()=>{
+        document.getElementById("undoBox")
+        .style.display = "none";
+    },5000);
+}
+
+function undoDelete(){
+    if(deletedCard){
+        deletedCard.style.display = "block";
+    }
+
+    document.getElementById("undoBox")
+    .style.display = "none";
+}
+</script>
+
+</body>
+</html>
