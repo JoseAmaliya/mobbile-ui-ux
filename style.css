@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    min-height:100vh;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    min-height:100vh;
+    position:relative;
+}
+
+.topbar{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.tabs{
+    display:flex;
+    background:white;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.tabs::-webkit-scrollbar{
+    display:none;
+}
+
+.tab{
+    flex:1;
+    min-width:100px;
+    text-align:center;
+    padding:12px;
+    cursor:pointer;
+}
+
+.tab.active{
+    border-bottom:3px solid #2563eb;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.content{
+    padding:15px;
+    padding-bottom:90px;
+}
+
+.card{
+    width:100%;
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+}
+
+.bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    text-decoration:none;
+    color:#555;
+}
+
+.drawer{
+    width:260px;
+    max-width:80%;
+}
+
+/* Tablet */
+@media (min-width:768px){
+    .container{
+        max-width:700px;
+    }
+
+    .content{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+    }
+
+    .card{
+        margin-bottom:0;
+    }
+}
+
+/* Desktop */
+@media (min-width:1024px){
+    .container{
+        max-width:900px;
+    }
+
+    .content{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .bottom-nav{
+        max-width:900px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+}
