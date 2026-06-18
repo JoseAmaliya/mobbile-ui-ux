@@ -1,133 +1,103 @@
-const users = {
-admin:{
-password:"admin123",
-role:"Administrator"
-},
+/* DRAWER */
 
-jose:{
-password:"jose123",
-role:"Manager"
-},
+const menuBtn =
+document.getElementById('menuBtn');
 
-guest:{
-password:"guest123",
-role:"Guest"
-}
-};
+const drawer =
+document.getElementById('drawer');
 
-function login(){
+const overlay =
+document.getElementById('overlay');
 
-let username =
-document.getElementById("username").value;
+menuBtn.addEventListener('click', () => {
 
-let password =
-document.getElementById("password").value;
+    drawer.classList.toggle('active');
 
-if(
-users[username] &&
-users[username].password === password
-){
-
-document.getElementById(
-"loginPage"
-).style.display="none";
-
-document.getElementById(
-"app"
-).style.display="block";
-
-document.getElementById(
-"userName"
-).innerText=username;
-
-document.getElementById(
-"userRole"
-).innerText=
-users[username].role;
-
-document.getElementById(
-"profileImg"
-).src=
-`https://api.dicebear.com/7.x/shapes/svg?seed=${username}`;
-
-}else{
-alert("Username atau Password salah");
-}
-
-}
-
-function logout(){
-
-document.getElementById(
-"app"
-).style.display="none";
-
-document.getElementById(
-"loginPage"
-).style.display="flex";
-}
-
-function toggleDrawer(){
-
-document
-.getElementById("drawer")
-.classList.toggle("active");
-
-}
-
-function showPage(page){
-
-document
-.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
-
-document
-.getElementById(page)
-.classList.add("active");
-
-}
-
-function refreshPage(){
-location.reload();
-}
-
-function searchMenu(){
-
-let input =
-document
-.getElementById("searchMenu")
-.value.toLowerCase();
-
-let cards =
-document
-.querySelectorAll(".produk-card");
-
-cards.forEach(card=>{
-
-let text =
-card.innerText.toLowerCase();
-
-card.style.display =
-text.includes(input)
-? "block"
-: "none";
+    overlay.style.display =
+        drawer.classList.contains('active')
+        ? 'block'
+        : 'none';
 
 });
 
+overlay.addEventListener('click', () => {
+
+    drawer.classList.remove('active');
+
+    overlay.style.display = 'none';
+
+});
+
+/* DROPDOWN */
+
+const appsBtn =
+document.getElementById('appsBtn');
+
+const dropdownMenu =
+document.getElementById('dropdownMenu');
+
+appsBtn.addEventListener('click', () => {
+
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === 'block'
+        ? 'none'
+        : 'block';
+
+});
+
+/* TABS */
+
+const tabButtons =
+document.querySelectorAll('.tab-btn');
+
+tabButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        tabButtons.forEach(btn => {
+
+            btn.classList.remove('active');
+
+        });
+
+        button.classList.add('active');
+
+    });
+
+});
+
+/* DELETE + UNDO */
+
+let deletedCard = null;
+let deletedCardParent = null;
+
+function deleteCard(button){
+
+    deletedCard =
+        button.closest('.card');
+
+    deletedCardParent =
+        deletedCard.parentNode;
+
+    deletedCard.remove();
+
+    document.getElementById('undoBox')
+    .style.display = 'flex';
+
 }
 
-function setTheme(mode){
+function undoDelete(){
 
-if(mode==="dark"){
+    if(deletedCard){
 
-document.body.style.background=
-"linear-gradient(135deg,#111827,#1f2937,#374151)";
+        deletedCardParent
+        .appendChild(deletedCard);
 
-}else{
+        deletedCard = null;
 
-document.body.style.background=
-"linear-gradient(135deg,#134e4a,#166534,#15803d)";
+        document.getElementById('undoBox')
+        .style.display = 'none';
 
-}
+    }
 
 }
