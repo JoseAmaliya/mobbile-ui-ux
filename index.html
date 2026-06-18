@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GlassMorph Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="login-page">
+
+<div class="glass-card login-card">
+
+<h1>🚀 GlassMorph App</h1>
+
+<input id="username" placeholder="Username">
+
+<input id="password"
+type="password"
+placeholder="Password">
+
+<button onclick="login()">
+Masuk
+</button>
+
+<p class="demo">
+admin / admin123
+</p>
+
+</div>
+
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+
+<!-- DRAWER -->
+<div id="drawer" class="drawer">
+
+<h2>Menu</h2>
+
+<a onclick="showPage('dashboard')">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</a>
+
+<a onclick="showPage('produk')">
+<i class="fas fa-box"></i>
+Produk
+</a>
+
+<a onclick="showPage('profil')">
+<i class="fas fa-user"></i>
+Profil
+</a>
+
+<a onclick="showPage('setting')">
+<i class="fas fa-gear"></i>
+Setting
+</a>
+
+<a onclick="logout()">
+<i class="fas fa-right-from-bracket"></i>
+Logout
+</a>
+
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+
+<i class="fas fa-bars"
+onclick="toggleDrawer()"></i>
+
+<h2>GlassMorph UI</h2>
+
+</div>
+
+<div class="container">
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="page active">
+
+<h1>Dashboard</h1>
+
+<div class="dashboard-grid">
+
+<div class="glass-card stat">
+<h2>250</h2>
+<p>User</p>
+</div>
+
+<div class="glass-card stat">
+<h2>120</h2>
+<p>Produk</p>
+</div>
+
+<div class="glass-card stat">
+<h2>89</h2>
+<p>Pesanan</p>
+</div>
+
+<div class="glass-card stat">
+<h2>5JT</h2>
+<p>Pendapatan</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUK -->
+<section id="produk" class="page">
+
+<h1>Produk</h1>
+
+<div class="produk-grid">
+
+<div class="glass-card produk-card">
+
+<img src="https://picsum.photos/300/200?1">
+
+<h3>Laptop Gaming</h3>
+
+<p>Rp 5.000.000</p>
+
+<button>Beli</button>
+
+</div>
+
+<div class="glass-card produk-card">
+
+<img src="https://picsum.photos/300/200?2">
+
+<h3>Keyboard RGB</h3>
+
+<p>Rp 250.000</p>
+
+<button>Beli</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROFIL -->
+<section id="profil" class="page">
+
+<div class="glass-card profile-card">
+
+<img src="https://i.pravatar.cc/150">
+
+<h2 id="userName">
+Admin
+</h2>
+
+<p id="userRole">
+Administrator
+</p>
+
+</div>
+
+</section>
+
+<!-- SETTING -->
+<section id="setting" class="page">
+
+<div class="glass-card">
+
+<h2>Pengaturan</h2>
+
+<label>
+
+<input type="checkbox">
+
+ Dark Mode
+
+</label>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+
+<a onclick="showPage('dashboard')">
+<i class="fas fa-home"></i>
+<span>Home</span>
+</a>
+
+<a onclick="showPage('produk')">
+<i class="fas fa-search"></i>
+<span>Cari</span>
+</a>
+
+<a onclick="showPage('profil')">
+<i class="fas fa-user"></i>
+<span>Profil</span>
+</a>
+
+<a onclick="showPage('setting')">
+<i class="fas fa-gear"></i>
+<span>Setting</span>
+</a>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
